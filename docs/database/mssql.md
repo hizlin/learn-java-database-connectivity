@@ -69,3 +69,4 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 - Release Notes  
   https://docs.microsoft.com/zh-cn/sql/ssms/release-notes-ssms
+

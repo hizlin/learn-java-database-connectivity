@@ -13,6 +13,10 @@
   https://shardingsphere.apache.org/document/current/en/overview/
   https://shardingsphere.apache.org/document/current/cn/overview/
 
+- ShardingSphere Benchmark
+  https://github.com/apache/shardingsphere-benchmark
+
+
 ### ShardingSphere-JDBC
 
 ```html
