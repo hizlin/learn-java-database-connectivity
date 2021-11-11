@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="learn-java-database-connectivity" />
+        <module name="test-spring-data-jpa" />
+        <module name="test-spring-shardingsphere-jdbc" />
       </profile>
     </annotationProcessing>
   </component>
