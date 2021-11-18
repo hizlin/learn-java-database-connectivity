@@ -11,6 +11,7 @@
     <modules>
         <module>test-spring-data-jpa</module>
         <module>test-spring-shardingsphere-jdbc</module>
+        <module>test-common</module>
     </modules>
 
     <properties>
