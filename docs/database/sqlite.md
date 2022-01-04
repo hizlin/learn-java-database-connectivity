@@ -6,7 +6,8 @@
 
 - Source  
   https://github.com/sqlite/sqlite  
-  v3.36.0 2021-06-19
+  v3.37.1 2021-12-30.  
+  v3.36.0 2021-06-19;
 
 ### JDBC Driver
 

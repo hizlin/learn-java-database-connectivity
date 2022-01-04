@@ -19,7 +19,7 @@
   https://jdbc.postgresql.org/
 
 - Source  
-  https://github.com/pgjdbc/pgjdbc
+  https://github.com/pgjdbc/pgjdbc  
   v42.3.1 2021-10-30
 
 - Maven

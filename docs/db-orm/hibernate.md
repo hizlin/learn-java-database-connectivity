@@ -14,7 +14,7 @@
 
 - Source  
   https://github.com/hibernate/hibernate-orm  
-  v5.6.1 2021-10-27
+  v5.6.3 2021-12-16
 
 - Maven
 ```html
@@ -22,14 +22,14 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
-    <version>5.6.1.Final</version>
+    <version>5.6.3.Final</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core-jakarta -->
 <dependency>
   <groupId>org.hibernate</groupId>
   <artifactId>hibernate-core-jakarta</artifactId>
-  <version>5.6.1.Final</version>
+  <version>5.6.3.Final</version>
 </dependency>
 ```
 > hibernate-core: for JPA 2.2;  
@@ -49,7 +49,7 @@
 
 - Source  
   https://github.com/hibernate/hibernate-reactive  
-  v1.1.0 2021-11-05
+  v1.1.1 2021-12-10
 
 - Maven
 ```html
@@ -57,7 +57,7 @@
 <dependency>
     <groupId>org.hibernate.reactive</groupId>
     <artifactId>hibernate-reactive-core</artifactId>
-    <version>1.1.0.Final</version>
+    <version>1.1.1.Final</version>
 </dependency>
 ```
 

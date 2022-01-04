@@ -27,7 +27,7 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 - Source  
   https://github.com/microsoft/mssql-jdbc  
-  v9.5.0
+  v9.4.1
 
 - Maven
 ```html
@@ -35,12 +35,12 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
-    <version>9.5.0.jre17</version>
+    <version>9.4.1.jre11</version>
 </dependency>
 ```
-> for Java 17: 9.5.0.jre17  
-> for Java 11: 9.5.0.jre11  
-> for Java 8:  9.5.0.jre8  
+> for Java 17:   
+> for Java 11: 9.4.1.jre11  
+> for Java 8:  9.4.1.jre8  
 
 - JavaDoc  
   https://javadoc.io/doc/com.microsoft.sqlserver/mssql-jdbc/  
@@ -56,12 +56,12 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 - Source  
   https://github.com/microsoft/azuredatastudio  
-  v1.33.1 2021-11-06
+  v1.34.0: 2021-12-16;
 
 - Release Notes  
   https://docs.microsoft.com/zh-cn/sql/azure-data-studio/release-notes-azure-data-studio
 
-- Azure Data Studio	vs SSMS
+- Azure Data Studio	vs SSMS  
   https://docs.microsoft.com/zh-cn/sql/azure-data-studio/what-is-azure-data-studio
 
 ### SQL Server Management Studio (SSMS)
@@ -69,4 +69,5 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 - Release Notes  
   https://docs.microsoft.com/zh-cn/sql/ssms/release-notes-ssms
+  v18.10: 2021-10-05;
 

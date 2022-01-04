@@ -5,21 +5,23 @@
   https://blog.mybatis.org/
 
 ### MyBatis 3
+
 - Docs  
   https://mybatis.org/mybatis-3/  
   https://mybatis.org/mybatis-3/zh/index.html
 
 - Source  
   https://github.com/mybatis/mybatis-3  
-  v3.5.8 2021-12-13  
+  v3.5.9 2021-12-26  
 
 - Source for Spring  
-  https://github.com/mybatis/spring
+  https://github.com/mybatis/spring  
   v2.0.6 2020-11-14
 
 - Source for Spring Boot  
   https://github.com/mybatis/spring-boot-starter  
-  v2.2.0 2021-05-28 (for Spring Boot 2.5.0)  
+  v2.2.1: 2021-12-30 (for Spring Boot 2.6)  
+  v2.2.0: 2021-05-28 (for Spring Boot 2.5)
 
 - Maven
 ```html
@@ -27,14 +29,14 @@
 <dependency>
   <groupId>org.mybatis</groupId>
   <artifactId>mybatis</artifactId>
-  <version>3.5.8</version>
+  <version>3.5.9</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
 <dependency>
     <groupId>org.mybatis.spring.boot</groupId>
     <artifactId>mybatis-spring-boot-starter</artifactId>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
 </dependency>
 ```
 

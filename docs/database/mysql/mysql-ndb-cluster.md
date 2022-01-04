@@ -1,21 +1,31 @@
 
 ### MySQL NDB Cluster
+> NDB: Network DataBase.
 
 - Index  
   https://dev.mysql.com/doc/index-cluster.html
 
 ### MySQL NDB Cluster 8.0
 
+- Docs  
+  https://dev.mysql.com/doc/refman/8.0/en/mysql-cluster.html
+
+- Overview  
+  https://dev.mysql.com/doc/refman/8.0/en/mysql-cluster-overview.html
+![cluster-components](https://dev.mysql.com/doc/refman/8.0/en/images/cluster-components-1.png)
+> NDB SQL Nodes.mysqld != MySQL.mysqld.  
+> MySQL NDB Cluster: One or more MySQL servers with the NDB storage engine.
+
 - Release Notes  
   https://dev.mysql.com/doc/relnotes/mysql-cluster/8.0/en/
 
-- Reference Manual  
-  https://dev.mysql.com/doc/refman/8.0/en/mysql-cluster.html
-
-- NDB Cluster vs InnoDB Cluster
+- **NDB Cluster vs InnoDB Cluster**  
   https://dev.mysql.com/doc/refman/8.0/en/mysql-cluster-ndb-innodb-engines.html
 
-### Docker
+- Downloads  
+  https://dev.mysql.com/downloads/cluster/
+
+### MySQL NDB Cluster Docker
 
 - Source  
   https://github.com/mysql/mysql-docker  
@@ -33,7 +43,7 @@ docker pull mysql/mysql-cluster:8.0
   - 2202: default port for Cluster data nodes
   - 1186: default port for Cluster management nodes
 
-- Initial Configuration of NDB Cluster
+- Initial Configuration of NDB Cluster  
   https://dev.mysql.com/doc/refman/8.0/en/mysql-cluster-install-configuration.html
 
 
