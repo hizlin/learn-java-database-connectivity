@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  es-single:
+    image: elastic/elasticsearch:7.10.2
+    container_name: es-single
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+  kb-single:
+    image: elastic/kibana:7.10.2
+    container_name: kb-single
+    ports:
+      - '5601:5601'
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es-single:9200
+      - I18N_LOCALE=zh-CN
