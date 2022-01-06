@@ -1,7 +1,7 @@
 
 ## MyBatis-Plus
 
-- Website  
+- Home  
   https://baomidou.com/
 
 - Source  
@@ -27,6 +27,9 @@
 | 3.4.3.2 ~ 3.4.3.4 | 2.5.3 |
 | 3.4.3 ~ 3.4.3.1 | 2.4.5 |
 | 3.4.0 ~ 3.4.2 | 2.3.2.RELEASE |
+
+- mybatis-plus-samples  
+  https://github.com/baomidou/mybatis-plus-samples
 
 
 ### mybatis-plus-generator
