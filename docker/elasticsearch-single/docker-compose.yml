@@ -1,7 +1,7 @@
-version: '3.8'
+version: '3.9'
 services:
   es-single:
-    image: elastic/elasticsearch:7.10.2
+    image: elastic/elasticsearch:7.16.2
     container_name: es-single
     ports:
       - '9200:9200'
@@ -11,7 +11,7 @@ services:
     volumes:
       - ./data/elasticsearch:/usr/share/elasticsearch/data
   kb-single:
-    image: elastic/kibana:7.10.2
+    image: elastic/kibana:7.16.2
     container_name: kb-single
     ports:
       - '5601:5601'
