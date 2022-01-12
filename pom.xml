@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.hizlin</groupId>
+    <groupId>dev.example</groupId>
     <artifactId>learn-java-database-connectivity</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
@@ -14,6 +14,7 @@
         <module>test-common</module>
         <module>test-mybatis-plus-spring-boot</module>
         <module>test-mybatis-plus-generator</module>
+        <module>test-spring-data-jdbc</module>
     </modules>
 
     <properties>

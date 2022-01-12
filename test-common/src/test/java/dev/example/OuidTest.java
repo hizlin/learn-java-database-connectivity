@@ -1,4 +1,4 @@
-package io.hizlin;
+package dev.example;
 
 import org.junit.jupiter.api.Test;
 

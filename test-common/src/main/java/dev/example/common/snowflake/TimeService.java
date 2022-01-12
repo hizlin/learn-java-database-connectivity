@@ -1,4 +1,4 @@
-package io.hizlin.snowflake;
+package dev.example.common.snowflake;
 
 public interface TimeService {
 

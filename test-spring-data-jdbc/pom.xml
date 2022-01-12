@@ -15,7 +15,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>test-mybatis-plus-spring-boot</artifactId>
+    <artifactId>test-spring-data-jdbc</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -23,19 +23,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>dev.example</groupId>
-            <artifactId>test-common</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.0</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -45,7 +32,13 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->

@@ -1,4 +1,4 @@
-package io.hizlin.ouid;
+package dev.example.common.ouid;
 
 public class Ouid {
 

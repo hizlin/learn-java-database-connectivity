@@ -1,4 +1,4 @@
-package io.hizlin.snowflake;
+package dev.example.common.snowflake;
 
 import lombok.SneakyThrows;
 
@@ -139,6 +139,11 @@ public class Snowflake {
 
         private int sequenceRingLength = 8;
 
+        /**
+         * 节点数量
+         * @param length
+         * @return
+         */
         public SnowflakeBuilder sequenceRingLength(int length) {
             if (length < 0) {
                 throw new IllegalArgumentException();

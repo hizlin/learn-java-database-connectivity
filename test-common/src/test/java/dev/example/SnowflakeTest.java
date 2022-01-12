@@ -1,6 +1,6 @@
-package io.hizlin;
+package dev.example;
 
-import io.hizlin.snowflake.Snowflake;
+import dev.example.common.snowflake.Snowflake;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
