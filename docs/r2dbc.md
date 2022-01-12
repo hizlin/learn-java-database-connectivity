@@ -1,10 +1,10 @@
 
-## Reactive Relational Database Connectivity (R2DBC)
+### Reactive Relational Database Connectivity (R2DBC)
 
-- Website  
+- Home  
   https://r2dbc.io/
 
-- Github  
+- Source  
   https://github.com/r2dbc
 
 - Drivers  
