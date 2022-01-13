@@ -1,4 +1,4 @@
-package dev.example;
+package dev.example.product;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
