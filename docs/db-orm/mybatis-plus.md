@@ -35,7 +35,7 @@
 ### mybatis-plus-generator
 
 - Docs  
-  https://baomidou.com/guide/generator-new.html
+  https://baomidou.com/pages/981406/
 
 - Source  
   https://github.com/baomidou/generator  
