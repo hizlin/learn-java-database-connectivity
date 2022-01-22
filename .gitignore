@@ -29,5 +29,5 @@ hs_err_pid*
 target/
 out/
 
-# this project
+# This Project
 docker/*/data/

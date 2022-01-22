@@ -40,7 +40,7 @@
 
 - Source  
   https://github.com/mysql/mysql-connector-j  
-  v8.0.27 2021-10-18
+  v8.0.28 2022-01-13
 
 - Maven
 ```html
@@ -48,7 +48,6 @@
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.27</version>
+    <version>8.0.28</version>
 </dependency>
 ```
-
