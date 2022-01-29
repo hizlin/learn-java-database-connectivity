@@ -1,0 +1,34 @@
+package ${model.add.Namespace};
+
+import lombok.Data;
+import java.io.Serializable;
+#foreach($p in ${model.add.importPackages})
+import $p;
+#end
+#if($swaggerVersion == 3)
+import io.swagger.v3.oas.annotations.media.Schema;
+#end
+#if($swaggerVersion == 2)
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+
+#if($swaggerVersion == 3)
+@Schema(name = "${model.add.type}", description = "$!{table.comment}")
+#end
+#if($swaggerVersion == 2)
+@ApiModel("${model.add.type}")
+#end
+@Data
+public class ${model.add.type} implements Serializable {
+#foreach($field in ${model.add.fields})
+
+    #if($swaggerVersion == 3)
+    @Schema(description = "$!{field.comment}")
+    #end
+    #if($swaggerVersion == 2)
+    @ApiModelProperty("$!{field.comment}")
+    #end
+    private ${field.propertyType} ${field.propertyName};
+#end
+}

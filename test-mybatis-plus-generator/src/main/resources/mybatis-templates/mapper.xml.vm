@@ -36,4 +36,21 @@
     </sql>
 
 #end
+
+    <select id="tryQuery" resultType="${model.namespace}.${model.grid.type}">
+        SELECT
+#foreach($field in ${model.grid.fields})
+            t.${field.columnName}#if($foreach.hasNext),#end
+#end
+        FROM ${table.name} AS t
+        WHERE
+#if(${model.tenant})
+            t.${model.tenant.columnName} = #{form.${model.tenant.propertyName}}
+#else
+            TRUE
+#end
+#if(${model.key})
+        ORDER BY t.${model.key.columnName}
+#end
+    </select>
 </mapper>

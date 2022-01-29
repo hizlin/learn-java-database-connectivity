@@ -1,13 +1,13 @@
 
 ## SQLite
 
-- Website  
+- Home  
   https://sqlite.org/
 
 - Source  
   https://github.com/sqlite/sqlite  
-  v3.37.1 2021-12-30.  
-  v3.36.0 2021-06-19;
+  v3.37.2 2022-01-06;  
+  v3.36.0 2021-06-19;  
 
 ### JDBC Driver
 
@@ -24,5 +24,3 @@
     <version>3.36.0.3</version>
 </dependency>
 ```
-
-

@@ -46,7 +46,6 @@ docker pull apache/shardingsphere-proxy:latest
 docker pull apache/shardingsphere-proxy:5.0.0
 ```
 
-
 ### ShardingSphere UI
 
 - Source  
@@ -59,4 +58,3 @@ docker pull apache/shardingsphere-proxy:5.0.0
 docker pull apache/shardingsphere-ui:latest
 docker pull apache/shardingsphere-ui:5.0.0-alpha
 ```
-

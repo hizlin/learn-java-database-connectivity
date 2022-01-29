@@ -1,0 +1,34 @@
+package ${model.grid.Namespace};
+
+import lombok.Data;
+import java.io.Serializable;
+#foreach($p in ${model.grid.importPackages})
+import $p;
+#end
+#if($swaggerVersion == 3)
+import io.swagger.v3.oas.annotations.media.Schema;
+#end
+#if($swaggerVersion == 2)
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+
+#if($swaggerVersion == 3)
+@Schema(name = "${model.grid.type}", description = "$!{table.comment}")
+#end
+#if($swaggerVersion == 2)
+@ApiModel("${model.grid.type}")
+#end
+@Data
+public class ${model.grid.type} implements Serializable {
+#foreach($field in ${model.grid.fields})
+
+    #if($swaggerVersion == 3)
+    @Schema(description = "$!{field.comment}")
+    #end
+    #if($swaggerVersion == 2)
+    @ApiModelProperty("$!{field.comment}")
+    #end
+    private ${field.propertyType} ${field.propertyName};
+#end
+}

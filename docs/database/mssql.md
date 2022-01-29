@@ -4,7 +4,7 @@
 - Versions
   - 2019 (15.x) (Windows & Linux)
   - 2017 (14.x) (Windows & Linux)
-  - 2016 (13.x) (Windows)
+  - 2016 (13.x) (Windows Only)
 
 - Docs  
   https://docs.microsoft.com/zh-cn/sql/?view=sql-server-ver15
@@ -27,7 +27,7 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 - Source  
   https://github.com/microsoft/mssql-jdbc  
-  v9.4.1
+  v10.2.0 2022-01-30
 
 - Maven
 ```html
@@ -35,12 +35,12 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
-    <version>9.4.1.jre11</version>
+    <version>10.2.0.jre11</version>
 </dependency>
 ```
-> for Java 17:   
-> for Java 11: 9.4.1.jre11  
-> for Java 8:  9.4.1.jre8  
+> for Java 17: 10.2.0.jre17  
+> for Java 11: 10.2.0.jre11  
+> for Java 8 : 10.2.0.jre8  
 
 - JavaDoc  
   https://javadoc.io/doc/com.microsoft.sqlserver/mssql-jdbc/  
@@ -65,9 +65,8 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
   https://docs.microsoft.com/zh-cn/sql/azure-data-studio/what-is-azure-data-studio
 
 ### SQL Server Management Studio (SSMS)
-> Only Windows
+> Windows Only
 
 - Release Notes  
-  https://docs.microsoft.com/zh-cn/sql/ssms/release-notes-ssms
+  https://docs.microsoft.com/zh-cn/sql/ssms/release-notes-ssms  
   v18.10: 2021-10-05;
-

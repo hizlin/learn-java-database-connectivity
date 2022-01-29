@@ -1,0 +1,44 @@
+package ${model.query.Namespace};
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+#if($swaggerVersion == 3)
+import io.swagger.v3.oas.annotations.media.Schema;
+#end
+#if($swaggerVersion == 2)
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+import dev.core.BasePageable;
+
+#if($swaggerVersion == 3)
+@Schema(name = "${model.query.type}", description = "$!{table.comment}")
+#end
+#if($swaggerVersion == 2)
+@ApiModel("${model.query.type}")
+#end
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class ${model.query.type} extends BasePageable {
+
+    #if(${model.tenant})
+    /**
+     * 仅限 Controller/Service 赋值
+     */
+        #if($swaggerVersion == 3)
+    @Schema(hidden = true)
+        #end
+        #if($swaggerVersion == 2)
+    @ApiModelProperty(hidden = true)
+        #end
+    private ${model.tenant.propertyType} ${model.tenant.propertyName};
+    #end
+
+    #if($swaggerVersion == 3)
+    @Schema(description = "")
+    #end
+    #if($swaggerVersion == 2)
+    @ApiModelProperty("")
+    #end
+    private String keywords;
+}

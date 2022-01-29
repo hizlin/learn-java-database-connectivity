@@ -9,12 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
+        <module>test-commons</module>
         <module>test-spring-data-jpa</module>
-        <module>test-spring-shardingsphere-jdbc</module>
-        <module>test-common</module>
-        <module>test-mybatis-plus-spring-boot</module>
+        <module>test-shardingsphere-jdbc-spring</module>
+        <module>test-mybatis-plus-spring</module>
         <module>test-mybatis-plus-generator</module>
         <module>test-spring-data-jdbc</module>
+        <module>test-mybatis-dynamic-sql</module>
     </modules>
 
     <properties>
@@ -26,7 +27,6 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -75,7 +75,7 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.33</version>
+                <version>1.7.35</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->

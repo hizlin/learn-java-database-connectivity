@@ -3,8 +3,10 @@ package dev.tools;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.builder.*;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -22,12 +24,14 @@ public class TestMybatisPlusGenerator {
 
     static void execute() {
         var engine = new SharpVelocityTemplateEngine();
+
         var config1 = config1();
         var config2 = config2();
         var config3 = config3();
         var config4 = config4();
         var config5 = config5();
         var config6 = config6();
+
         new AutoGenerator(config1)
                 .global(config2)
                 .packageInfo(config3)
@@ -41,6 +45,7 @@ public class TestMybatisPlusGenerator {
         var url = "";
         var username = "";
         var password = "";
+
         // 可选配置: +4
         return new DataSourceConfig.Builder(url, username, password)
                 // .schema("")
@@ -51,14 +56,17 @@ public class TestMybatisPlusGenerator {
     }
 
     static GlobalConfig config2() {
-        var output = "";
+        var output = "./test-mybatis-plus-generator" + "/src/main/java";
+
+        // 注意: 本示例不支持生成 Kotlin 代码;
+        // 备注: 本示例不建议在实体上开启 Swagger 注解; 因为有专门的 DTO 模型;
 
         // 全局配置; 可选配置: +8
         return new GlobalConfig.Builder().outputDir(output) // 指定输出目录;
                 .fileOverride() // 开启文件覆盖; default: false (禁止);
                 .disableOpenDir() // 禁止打开生成目录; default: true (打开);
                 .author("CodeGenerator") // 作者;
-                .enableSwagger() // 开启 Swagger 注解 (用于 Entity 定义); default: false;
+                // .enableSwagger() // 开启 Swagger 注解 (用于 Entity 定义); default: false;
                 // .dateType(DateType.TIME_PACK) // 时间类型; default: DateType.TIME_PACK;
                 // .commentDate("yyyy-MM-dd") // default: yyyy-MM-dd;
                 // .enableKotlin() // 生成 Kotlin 代码文件; default: false;
@@ -68,18 +76,19 @@ public class TestMybatisPlusGenerator {
     static PackageConfig config3() {
         var parent = "dev.example";
         var module = "app";
-        var paths = Collections.singletonMap(OutputFile.mapperXml, "resources/" + module);
+        var xml = "./test-mybatis-plus-generator" + "/src/main/resources/mapper/" + module;
+        var paths = Collections.singletonMap(OutputFile.mapperXml, xml);
 
         // 包名配置; 可选配置: +10
         return new PackageConfig.Builder().parent(parent) // default: com.baomidou
                 .moduleName(module) // default: ""
-                .entity("") // default: entity
-                .service("") // default: service
-                .serviceImpl("") // default: service.impl
-                .mapper("") // default: mapper
-                .xml("") // default: mapper.xml // v3.5.0 设置无效?
-                .controller("") // default: controller
-                .other("") // 输出 自定义文件的 所用包名; default: other;
+                // .entity("") // default: entity
+                // .service("") // default: service
+                // .serviceImpl("") // default: service.impl
+                // .mapper("") // default: mapper
+                // .xml("") // default: mapper.xml // v3.5.0 设置无效?
+                // .controller("") // default: controller
+                // .other("") // 输出 自定义文件的 所用包名; default: other;
                 .pathInfo(paths) // 重载包的路径配置
                 .build();
     }
@@ -90,10 +99,10 @@ public class TestMybatisPlusGenerator {
                 .disable(TemplateType.CONTROLLER) // 禁用哪些模板;
                 .entity("/mybatis-templates/entity.java") // default: /templates/entity.java
                 // .entityKt("") // default: /templates/entity.kt
-                .service("/mybatis-emplates/service.java") // default: /templates/service.java
+                .service("/mybatis-templates/service.java") // default: /templates/service.java
                 .serviceImpl("/mybatis-templates/serviceImpl.java") // default: /templates/serviceImpl.java
                 .mapper("/mybatis-templates/mapper.java") // default: /templates/mapper.java
-                .mapperXml("/mybatis-emplates/mapper.xml") // default: /templates/mapper.xml
+                .mapperXml("/mybatis-templates/mapper.xml") // default: /templates/mapper.xml
                 .controller("/mybatis-templates/controller.java") // default: /templates/controller.java
                 .build();
     }
@@ -133,7 +142,9 @@ public class TestMybatisPlusGenerator {
          * # 过滤字段后缀; 例如: addFieldSuffix("_flag"): deleted_flag -> deleted;
          * addFieldSuffix(String...)
          */
-        BaseBuilder builder = new StrategyConfig.Builder();
+        BaseBuilder builder = new StrategyConfig.Builder()
+                .addInclude("app_project")
+                .addTablePrefix("app_");
 
         /* Entity 可选配置: +20
          *
@@ -198,6 +209,9 @@ public class TestMybatisPlusGenerator {
          */
         builder = builder.entityBuilder()
                 .enableLombok()
+                .logicDeleteColumnName("deleted")
+                .logicDeletePropertyName("deleted")
+                .formatFileName("%sEntity")
         ;
 
         /* Mapper 可选配置: +7
@@ -266,22 +280,28 @@ public class TestMybatisPlusGenerator {
                 // .superClass(BaseController.class)
                 // .formatFileName("%sController")
                 .enableRestStyle() // 启用 @RestController 注解; default: false;
-                .enableHyphenStyle() // @RequestMapping 开启驼峰转连字符; 例如: tableEntity => table-entity; default: false;
+        // .enableHyphenStyle() // @RequestMapping 开启驼峰转连字符; 例如: tableEntity => table-entity; default: false;
         ;
 
         return builder.build();
     }
 
     static InjectionConfig config6() {
+
+        // 模板文件
         var templates = new HashMap<String, String>();
-        templates.put("add", "/mybatis-templates/dto/add.java");
-        templates.put("update", "/mybatis-templates/dto/update.java");
-        templates.put("remove", "/mybatis-templates/dto/remove.java");
-        templates.put("info", "/mybatis-templates/dto/info.java");
-        templates.put("grid", "/mybatis-templates/dto/grid.java");
-        templates.put("query", "/mybatis-templates/dto/query.java");
+        templates.put("add.java", "/mybatis-templates/dto/add.java.vm");
+        templates.put("update.java", "/mybatis-templates/dto/update.java.vm");
+        templates.put("remove.java", "/mybatis-templates/dto/remove.java.vm");
+        templates.put("info.java", "/mybatis-templates/dto/info.java.vm");
+        templates.put("grid.java", "/mybatis-templates/dto/grid.java.vm");
+        templates.put("query.java", "/mybatis-templates/dto/query.java.vm");
+
+        // 模板配置
+        var modelTemplate = config7();
 
         var context = new HashMap<String, Object>();
+        context.put("modelTemplate", modelTemplate);
 
         return new InjectionConfig.Builder()
                 .beforeOutputFile((table, map) -> {
@@ -290,5 +310,50 @@ public class TestMybatisPlusGenerator {
                 .customMap(context)
                 .customFile(templates)
                 .build();
+    }
+
+    static ModelTemplate config7() {
+        var addIgnoreColumns = new ArrayList<String>();
+        addIgnoreColumns.add("create_time");
+        addIgnoreColumns.add("create_user_id");
+        addIgnoreColumns.add("update_time");
+        addIgnoreColumns.add("update_user_id");
+        addIgnoreColumns.add("deleted");
+        addIgnoreColumns.add("delete_time");
+        addIgnoreColumns.add("delete_user_id");
+        addIgnoreColumns.add("version");
+
+        var updateIgnoreColumns = new ArrayList<String>();
+        updateIgnoreColumns.add("create_time");
+        updateIgnoreColumns.add("create_user_id");
+        updateIgnoreColumns.add("update_time");
+        updateIgnoreColumns.add("update_user_id");
+        updateIgnoreColumns.add("deleted");
+        updateIgnoreColumns.add("delete_time");
+        updateIgnoreColumns.add("delete_user_id");
+        updateIgnoreColumns.add("version");
+
+        var infoIgnoreColumns = new ArrayList<String>();
+        infoIgnoreColumns.add("deleted");
+        infoIgnoreColumns.add("delete_time");
+        infoIgnoreColumns.add("delete_user_id");
+        infoIgnoreColumns.add("version");
+
+        var gridIgnoreColumns = new ArrayList<String>();
+        gridIgnoreColumns.add("deleted");
+        gridIgnoreColumns.add("delete_time");
+        gridIgnoreColumns.add("delete_user_id");
+        gridIgnoreColumns.add("version");
+
+        var modelTemplate = new ModelTemplate();
+        modelTemplate.getAddModelIgnoreColumns().addAll(addIgnoreColumns);
+        modelTemplate.getUpdateModelIgnoreColumns().addAll(updateIgnoreColumns);
+        modelTemplate.getInfoModelIgnoreColumns().addAll(infoIgnoreColumns);
+        modelTemplate.getGridModelIgnoreColumns().addAll(gridIgnoreColumns);
+
+        modelTemplate.setTenantKeyColumnName("tenant_id");
+        modelTemplate.setSwaggerVersion(2);
+
+        return modelTemplate;
     }
 }

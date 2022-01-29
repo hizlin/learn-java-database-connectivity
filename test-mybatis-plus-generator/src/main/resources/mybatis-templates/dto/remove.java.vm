@@ -1,0 +1,32 @@
+package ${model.remove.Namespace};
+
+import lombok.Data;
+import java.io.Serializable;
+import java.util.List;
+#if($swaggerVersion == 3)
+import io.swagger.v3.oas.annotations.media.Schema;
+#end
+#if($swaggerVersion == 2)
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+
+#if($swaggerVersion == 3)
+@Schema(name = "${model.remove.type}", description = "$!{table.comment}")
+#end
+#if($swaggerVersion == 2)
+@ApiModel("${model.remove.type}")
+#end
+@Data
+public class ${model.remove.type} implements Serializable {
+#if(${model.key})
+
+    #if($swaggerVersion == 3)
+    @Schema(description = "")
+    #end
+    #if($swaggerVersion == 2)
+    @ApiModelProperty("")
+    #end
+    private List<${model.key.propertyType}> keys;
+#end
+}

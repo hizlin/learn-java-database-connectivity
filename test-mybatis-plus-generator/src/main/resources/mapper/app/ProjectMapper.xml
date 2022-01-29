@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.example.app.mapper.ProjectMapper">
+
+
+    <select id="tryQuery" resultType="dev.example.app.model.ProjectGridDTO">
+        SELECT
+            t.tenant_id,
+            t.project_id,
+            t.company_id,
+            t.name,
+            t.kind,
+            t.status,
+            t.create_time,
+            t.create_user_id,
+            t.update_time,
+            t.update_user_id
+        FROM app_project AS t
+        WHERE
+            t.tenant_id = #{form.tenantId}
+        ORDER BY t.project_id
+    </select>
+</mapper>

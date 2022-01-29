@@ -5,22 +5,175 @@ import ${package.Mapper}.${table.mapperName};
 import ${package.Service}.${table.serviceName};
 import ${superServiceImplClassPackage};
 import org.springframework.stereotype.Service;
+import ${model.namespace}.*;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import java.time.LocalDateTime;
+#if(${model.delete})
+import dev.core.LogicDelete;
+#end
 
 /**
- * <p>
- * $!{table.comment} 服务实现类
- * </p>
+ * $!{table.comment}
  *
  * @author ${author}
  * @since ${date}
  */
 @Service
-#if(${kotlin})
-open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
-
-}
-#else
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
 
-}
+    @Override
+    public IPage<${model.grid.type}> tryQuery(${model.query.type} form) {
+        #if(${model.tenant})## 租户编号
+        ${model.tenant.propertyType} ${model.tenant.propertyName} = null;
+        form.set${model.tenant.capitalName}(${model.tenant.propertyName});
+        #end
+
+        var page = new Page<${model.grid.type}>(form.getPage(), form.getLimit());
+        var list = baseMapper.tryQuery(form, page);
+        page.setRecords(list);
+        return page;
+    }
+#if(${model.key})
+
+    @Override
+    public ${model.info.type} tryGet(${model.key.propertyType} ${model.key.propertyName}) {
+        #if(${model.tenant})## 租户编号
+        ${model.tenant.propertyType} ${model.tenant.propertyName} = null;
+
+        var entity = baseMapper.selectOne(
+            new LambdaQueryWrapper<${entity}>()
+                .eq(${entity}::get${model.key.capitalName}, ${model.key.propertyName})
+                .eq(${entity}::get${model.tenant.capitalName}, ${model.tenant.propertyName})
+        );
+        #else
+        var entity = baseMapper.selectById(${model.key.propertyName});
+        #end
+        if (entity == null) {
+            throw new RuntimeException();
+        }
+
+        var dto = new ${model.info.type}();
+        #foreach(${field} in ${model.info.fields})
+        dto.set${field.capitalName}(entity.get${field.capitalName}());
+        #end
+
+        return dto;
+    }
+
+    @Override
+    public ${model.key.propertyType} tryAdd(${model.add.type} form) {
+        var now = LocalDateTime.now();
+        #if(${model.tenant})## 租户编号
+        ${model.tenant.propertyType} ${model.tenant.propertyName} = null;
+        #end
+
+        var entity = new ${entity}();
+        #if(${model.tenant})
+        entity.set${model.tenant.capitalName}(${model.tenant.propertyName});
+        #end
+        #foreach($field in ${table.fields})
+            #if(!${field.keyFlag} && ${model.add.hasPropertyName(${field.propertyName})})
+        entity.set${field.capitalName}(form.get${field.capitalName}());
+            #else
+                #if(!${model.isTenantPropertyName(${field.propertyName})})
+        // entity.set${field.capitalName}();
+                #end
+            #end
+        #end
+
+        var b = baseMapper.insert(entity) > 0;
+        if (!b) {
+            throw new RuntimeException();
+        }
+        return entity.get${model.key.capitalName}();
+    }
+#else
+
+    @Override
+    public boolean tryAdd(${model.add.type} form) {
+        var now = LocalDateTime.now();
+        #if(${model.tenant})## 租户编号
+        ${model.tenant.propertyType} ${model.tenant.propertyName} = null;
+        #end
+
+        var entity = new ${entity}();
+        #if(${model.tenant})
+        entity.set${model.tenant.capitalName}(${model.tenant.propertyName});
+        #end
+        #foreach($field in ${table.fields})
+            #if(!${field.keyFlag} && ${model.add.hasPropertyName(${field.propertyName})})
+        entity.set${field.capitalName}(form.get${field.capitalName}());
+            #else
+                #if(!${model.isTenantPropertyName(${field.propertyName})})
+        // entity.set${field.capitalName}();
+                #end
+            #end
+        #end
+
+        return baseMapper.insert(entity) > 0;
+    }
 #end
+
+    @Override
+    public boolean tryUpdate(${model.update.type} form) {
+        var now = LocalDateTime.now();
+        #if(${model.tenant})## 租户编号
+        ${model.tenant.propertyType} ${model.tenant.propertyName} = null;
+
+        var entity = baseMapper.selectOne(
+            new LambdaQueryWrapper<${entity}>()
+                .eq(${entity}::get${model.key.capitalName}, form.get${model.key.capitalName}())
+                .eq(${entity}::get${model.tenant.capitalName}, ${model.tenant.propertyName})
+        );
+        #else
+
+        var entity = baseMapper.selectById(${model.key.propertyName});
+        #end
+        if (entity == null) {
+            throw new RuntimeException();
+        }
+
+        var b = this.lambdaUpdate()
+            #foreach($field in ${table.fields})
+                #if(!${field.keyFlag} && ${model.update.hasPropertyName(${field.propertyName})})
+            .set(${entity}::get${field.capitalName}, form.get${field.capitalName}())
+                #else
+                    #if(!${field.keyFlag} && !${model.isTenantPropertyName(${field.propertyName})})
+            // .set(${entity}::get${field.capitalName}, null)
+                    #end
+                #end
+            #end
+            .eq(${entity}::get${model.key.capitalName}, form.get${model.key.capitalName}())
+            #if(${model.tenant})## 租户编号
+            .eq(${entity}::get${model.tenant.capitalName}, ${model.tenant.propertyName})
+            #end
+            .update();
+        return b;
+    }
+
+    @Override
+    public boolean tryRemove(${model.remove.type} form) {
+        var now = LocalDateTime.now();
+        #if(${model.tenant})## 租户编号
+        ${model.tenant.propertyType} ${model.tenant.propertyName} = null;
+        #end
+
+        #if(${model.delete})
+        var b = this.lambdaUpdate()
+            .set(${entity}::get${model.delete.capitalName}, LogicDelete.YES.getValue())
+            .in(${entity}::get${model.key.capitalName}, form.getKeys())
+            .eq(${entity}::get${model.tenant.capitalName}, ${model.tenant.propertyName})
+            .update();
+        #else
+        var c = baseMapper.delete(
+            new LambdaQueryWrapper<${entity}>()
+                .in(${entity}::get${model.key.capitalName}, form.getKeys())
+                .eq(${entity}::get${model.tenant.capitalName}, ${model.tenant.propertyName})
+        );
+        var b = c > 0;
+        #end
+        return b;
+    }
+}

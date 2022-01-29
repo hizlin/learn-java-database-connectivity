@@ -2,14 +2,16 @@ package ${package.Mapper};
 
 import ${package.Entity}.${entity};
 import ${superMapperClassPackage};
+import com.baomidou.mybatisplus.core.metadata.IPage;
 #if(${mapperAnnotation})
 import org.apache.ibatis.annotations.Mapper;
 #end
+import org.apache.ibatis.annotations.Param;
+import java.util.List;
+import ${model.namespace}.*;
 
 /**
- * <p>
- * $!{table.comment} Mapper 接口
- * </p>
+ * $!{table.comment}
  *
  * @author ${author}
  * @since ${date}
@@ -17,10 +19,7 @@ import org.apache.ibatis.annotations.Mapper;
 #if(${mapperAnnotation})
 @Mapper
 #end
-#if(${kotlin})
-interface ${table.mapperName} : ${superMapperClass}<${entity}>
-#else
 public interface ${table.mapperName} extends ${superMapperClass}<${entity}> {
 
+    List<${model.grid.type}> tryQuery(@Param("form") ${model.query.type} form, IPage<${model.grid.type}> page);
 }
-#end

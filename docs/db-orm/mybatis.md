@@ -65,7 +65,7 @@
 
 - Source  
   https://github.com/mybatis/generator  
-  v1.4.0
+  v1.4.0 2019-11-25
 
 ```html
 <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
