@@ -7,7 +7,7 @@
 - Source  
   https://gitee.com/baomidou/mybatis-plus  
   https://github.com/baomidou/mybatis-plus  
-  v3.5.0 2022-01-01
+  v3.5.1 2022-01-25
 
 - Release Notes  
   https://github.com/baomidou/mybatis-plus/blob/3.0/CHANGELOG.md
@@ -18,15 +18,15 @@
 <dependency>
     <groupId>com.baomidou</groupId>
     <artifactId>mybatis-plus-boot-starter</artifactId>
-    <version>3.5.0</version>
+    <version>3.5.1</version>
 </dependency>
 ```
 | mybatis-plus-boot-starter | spring-boot-dependencies |
-| --- | --- |
-| 3.5.0 | 2.5.3 |
-| 3.4.3.2 ~ 3.4.3.4 | 2.5.3 |
-| 3.4.3 ~ 3.4.3.1 | 2.4.5 |
-| 3.4.0 ~ 3.4.2 | 2.3.2.RELEASE |
+|---------------------------|--------------------------|
+| 3.5.0                     | 2.5.3                    |
+| 3.4.3.2 ~ 3.4.3.4         | 2.5.3                    |
+| 3.4.3 ~ 3.4.3.1           | 2.4.5                    |
+| 3.4.0 ~ 3.4.2             | 2.3.2.RELEASE            |
 
 - mybatis-plus-samples  
   https://github.com/baomidou/mybatis-plus-samples
