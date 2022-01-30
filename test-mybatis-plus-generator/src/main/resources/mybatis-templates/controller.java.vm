@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiOperation;
 #end
 import ${package.Service}.${table.serviceName};
 import ${model.namespace}.*;
+import dev.core.Rest;
 
 /**
  * $!{table.comment}
@@ -56,10 +57,10 @@ public class ${table.controllerName} {
     @ApiOperation(value = "列表")
     #end
     @PostMapping("/list")
-    public Object list(@RequestBody ${model.query.type} form) {
+    public Rest.Page<${model.grid.type}> list(@RequestBody ${model.query.type} form) {
 
         var page = ${modelService}.tryQuery(form);
-        return page;
+        return Rest.page(page.getRecords(), page.getCurrent() + 1, page.getSize(), page.getTotal());
     }
 
     #if($swaggerVersion == 3)
@@ -69,10 +70,10 @@ public class ${table.controllerName} {
     @ApiOperation(value = "详情")
     #end
     @GetMapping("/info")
-    public Object info(@RequestParam ${model.key.propertyType} ${model.key.propertyName}) {
+    public Rest<${model.info.type}> info(@RequestParam ${model.key.propertyType} ${model.key.propertyName}) {
 
         var info = ${modelService}.tryGet(${model.key.propertyName});
-        return info;
+        return Rest.data(info);
     }
 
     #if($swaggerVersion == 3)
@@ -82,11 +83,19 @@ public class ${table.controllerName} {
     @ApiOperation(value = "新增")
     #end
     @PostMapping("/add")
-    public Object add(@RequestBody ${model.add.type} form) {
+#if($model.key)
+    public Rest<${model.key.propertyType}> add(@RequestBody ${model.add.type} form) {
 
         var key = ${modelService}.tryAdd(form);
-        return key;
+        return Rest.data(key);
     }
+#else
+    public Rest.Message add(@RequestBody ${model.add.type} form) {
+
+        var ok = ${modelService}.tryAdd(form);
+        return ok ? Rest.ok() : Rest.error();
+    }
+#end
 
     #if($swaggerVersion == 3)
     @Operation(summary = "修改")
@@ -95,10 +104,10 @@ public class ${table.controllerName} {
     @ApiOperation(value = "修改")
     #end
     @PostMapping("/update")
-    public Object update(@RequestBody ${model.update.type} form) {
+    public Rest.Message update(@RequestBody ${model.update.type} form) {
 
         var ok = ${modelService}.tryUpdate(form);
-        return ok;
+        return ok ? Rest.ok() : Rest.error();
     }
 
     #if($swaggerVersion == 3)
@@ -108,9 +117,9 @@ public class ${table.controllerName} {
     @ApiOperation(value = "删除")
     #end
     @PostMapping("/remove")
-    public Object remove(@RequestBody ${model.remove.type} form) {
+    public Rest.Message remove(@RequestBody ${model.remove.type} form) {
 
         var ok = ${modelService}.tryRemove(form);
-        return ok;
+        return ok ? Rest.ok() : Rest.error();
     }
 }
