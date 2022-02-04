@@ -27,7 +27,8 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 
 - Source  
   https://github.com/microsoft/mssql-jdbc  
-  v10.2.0 2022-01-30
+  v10.2.0 2022-02-01  
+  v10: 首个支持 jdk17 版本.
 
 - Maven
 ```html
