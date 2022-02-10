@@ -1,0 +1,6 @@
+# 附加配置
+[mysqld]
+server-id=1
+log-bin=mysql-bin
+binlog-format=ROW
+binlog-do-db=testdb

@@ -1,73 +1,73 @@
 
 ## phpMyAdmin
 
-- Website  
+- Home  
   https://www.phpmyadmin.net/
 
 - Source  
-  https://github.com/phpmyadmin/phpmyadmin
+  https://github.com/phpmyadmin/phpmyadmin  
+  v5.1.2 2022-01-22
 
-### Docker
+#### Docker (By phpmyadmin)
 
-- By phpmyadmin  
+- Source  
   https://github.com/phpmyadmin/docker  
+
+- Hub  
   https://hub.docker.com/r/phpmyadmin/phpmyadmin  
+
+- Image Variants: {version}-{library}
+  - version
+    - 忽略 (最新版本)
+    - {major}
+    - {major}.{minor}
+    - {major}.{minor}.{patch}
+  - library
+    - 忽略 (apache)
+    - fpm
+    - fpm-alpine
 ```shell
-# 最新版本
+# 最新版本 (apache)
 docker pull phpmyadmin/phpmyadmin:latest
-# 5.x 最新版本
+
+# apache
 docker pull phpmyadmin/phpmyadmin:5
-# 5.1.x 最新版本
-docker pull phpmyadmin/phpmyadmin:5.1
-# 固定版本
-docker pull phpmyadmin/phpmyadmin:5.1.1
 
-# fpm tags:
-docker pull phpmyadmin/phpmyadmin:fpm
+# fpm
 docker pull phpmyadmin/phpmyadmin:5-fpm
-docker pull phpmyadmin/phpmyadmin:5.1-fpm
-docker pull phpmyadmin/phpmyadmin:5.1.1-fpm
 
-# fpm-alpine tags:
-docker pull phpmyadmin/phpmyadmin:fpm-alpine
+# fpm-alpine
 docker pull phpmyadmin/phpmyadmin:5-fpm-alpine
-docker pull phpmyadmin/phpmyadmin:5.1-fpm-alpine
-docker pull phpmyadmin/phpmyadmin:5.1.1-fpm-alpine
 ```
 
-- By Docker  
-  https://github.com/docker-library/official-images/blob/master/library/phpmyadmin  
+#### Docker (By Docker)
+
+- Source  
+  https://github.com/docker-library/official-images/blob/master/library/phpmyadmin
+
+- Hub  
   https://hub.docker.com/_/phpmyadmin
+
+- Image Variants: {version}-{library}
+  - version
+    - 忽略 (最新版本)
+    - {major}
+    - {major}.{minor}
+    - {major}.{minor}.{patch}
+  - library
+    - apache
+    - fpm
+    - fpm-alpine
 ```shell
-# 最新版本
+# 最新版本 (apache)
 docker pull phpmyadmin:latest
-# 5.x 最新版本
-docker pull phpmyadmin:5
-# 5.1.x 最新版本
-docker pull phpmyadmin:5.1
-# 固定版本
-docker pull phpmyadmin:5.1.1
 
-# apache tags:
-docker pull phpmyadmin:apache
+# apache
 docker pull phpmyadmin:5-apache
-docker pull phpmyadmin:5.1-apache
-docker pull phpmyadmin:5.1.1-apache
 
-# fpm tags:
-docker pull phpmyadmin:fpm
+# fpm
 docker pull phpmyadmin:5-fpm
-docker pull phpmyadmin:5.1-fpm
-docker pull phpmyadmin:5.1.1-fpm
 
-# fpm-alpine tags:
-docker pull phpmyadmin:fpm-alpine
+# fpm-alpine
 docker pull phpmyadmin:5-fpm-alpine
-docker pull phpmyadmin:5.1-fpm-alpine
-docker pull phpmyadmin:5.1.1-fpm-alpine
 ```
-> variations:  
-> apache:
-> fpm:  
-> fpm-alpine:
-

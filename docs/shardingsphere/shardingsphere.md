@@ -1,21 +1,23 @@
 
 ## Apache ShardingSphere
 
-- Website  
+- Home  
   https://shardingsphere.apache.org/  
   https://shardingsphere.apache.org/index_zh.html
 
-- Source  
-  https://github.com/apache/shardingsphere  
-  v5.0.0 2021-11-10
-
 - Docs  
-  https://shardingsphere.apache.org/document/current/en/overview/
-  https://shardingsphere.apache.org/document/current/cn/overview/
+  https://shardingsphere.apache.org/document/5.1.0/cn/overview/  
+  https://shardingsphere.apache.org/document/5.0.0/cn/overview/  
+
+- JavaDoc  
+  https://javadoc.io/doc/org.apache.shardingsphere/shardingsphere-jdbc-core/latest/index.html
 
 - ShardingSphere Benchmark  
   https://github.com/apache/shardingsphere-benchmark
 
+- Source  
+  https://github.com/apache/shardingsphere  
+  v5.0.0 2021-11-10
 
 ### ShardingSphere-JDBC
 

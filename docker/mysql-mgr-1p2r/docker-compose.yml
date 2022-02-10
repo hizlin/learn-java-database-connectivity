@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+  mysql-primary:
+    image: mysql/mysql-server:8.0
+    container_name: mysql-primary
+    ports:
+      - "9301:3306"
+    volumes:
+      - ./data/primary:/var/lib/mysql
+      - ./conf/primary.cnf:/etc/my.cnf.d/primary.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+  mysql-replica1:
+    image: mysql/mysql-server:8.0
+    container_name: mysql-replica1
+    ports:
+      - "9302:3306"
+    volumes:
+      - ./data/replica1:/var/lib/mysql
+      # - ./conf/replica1.cnf:/etc/my.cnf.d/replica1.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+    depends_on:
+      - mysql-primary
+  mysql-replica2:
+    image: mysql/mysql-server:8.0
+    container_name: mysql-replica2
+    ports:
+      - "9303:3306"
+    volumes:
+      - ./data/replica2:/var/lib/mysql
+      # - ./conf/replica2.cnf:/etc/my.cnf.d/replica2.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+    depends_on:
+      - mysql-primary

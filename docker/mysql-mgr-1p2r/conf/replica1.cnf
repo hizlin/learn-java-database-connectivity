@@ -1,0 +1,5 @@
+# 附加配置
+[mysqld]
+server-id=2
+relay-log=mysql-relay-bin
+replicate-do-db=testdb

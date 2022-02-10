@@ -1,6 +1,9 @@
 
 ## HikariCP
 
+- v4 DataSourceType  
+  com.zaxxer.hikari.HikariDataSource
+
 - Source  
   https://github.com/brettwooldridge/HikariCP  
   v5.0.1 2022-01-09
@@ -24,4 +27,3 @@
 ```
 > v5.x for Java 11+  
 > v4.x for Java 8+
-

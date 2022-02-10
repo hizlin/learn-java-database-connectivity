@@ -1,0 +1,38 @@
+spring:
+  shardingsphere:
+    enabled: true
+    mode:
+      type: Standalone
+      repository:
+        type: File
+        props:
+      overwrite: false
+    datasource:
+      names: ds1,ds2
+      - ds1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/ds1
+        username: root
+        password:
+      - ds2:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/ds2
+        username: root
+        password:
+    schema:
+      name:
+    props:
+      - sql-show: false
+      - sql-simple: false
+      - kernel-executor-size: 0
+      - max-connections-size-per-query: 1
+      - check-table-metadata-enabled: false
+      - check-duplicate-table-enabled: false
+      - sql-comment-parse-enabled: false
+      - sql-federation-enabled: false
+    rules:
+      sharding:
+
+
