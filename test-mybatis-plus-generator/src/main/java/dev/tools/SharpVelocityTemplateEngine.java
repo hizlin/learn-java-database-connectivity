@@ -23,7 +23,7 @@ public class SharpVelocityTemplateEngine extends VelocityTemplateEngine {
 
         var output = config.getGlobalConfig().getOutputDir();
 
-        var pathInfo = config.getPathInfo();
+        // var pathInfo = config.getPathInfo();
 
         // EntityName 小写开头
         var lowerName = tableInfo.getName();
@@ -126,7 +126,7 @@ public class SharpVelocityTemplateEngine extends VelocityTemplateEngine {
             }
 
             var path = Paths.get(folder, model.getAdd().getType() + ConstVal.JAVA_SUFFIX);
-            this.outputFile(path.toFile(), context, add);
+            this.outputFile(path.toFile(), context, add, true);
         }
 
         // Update
@@ -147,21 +147,21 @@ public class SharpVelocityTemplateEngine extends VelocityTemplateEngine {
             }
 
             var path = Paths.get(folder, model.getUpdate().getType() + ConstVal.JAVA_SUFFIX);
-            this.outputFile(path.toFile(), context, update);
+            this.outputFile(path.toFile(), context, update, true);
         }
 
         // Remove
         var remove = customFile.getOrDefault("remove.java", null);
         if (remove != null && remove.length() > 0) {
             var path = Paths.get(folder, model.getRemove().getType() + ConstVal.JAVA_SUFFIX);
-            this.outputFile(path.toFile(), context, remove);
+            this.outputFile(path.toFile(), context, remove, true);
         }
 
         // Query
         var query = customFile.getOrDefault("query.java", null);
         if (query != null && query.length() > 0) {
             var path = Paths.get(folder, model.getQuery().getType() + ConstVal.JAVA_SUFFIX);
-            this.outputFile(path.toFile(), context, query);
+            this.outputFile(path.toFile(), context, query, true);
         }
 
         // Grid
@@ -179,7 +179,7 @@ public class SharpVelocityTemplateEngine extends VelocityTemplateEngine {
             }
 
             var path = Paths.get(folder, model.getGrid().getType() + ConstVal.JAVA_SUFFIX);
-            this.outputFile(path.toFile(), context, grid);
+            this.outputFile(path.toFile(), context, grid, true);
         }
 
         // Info
@@ -197,28 +197,23 @@ public class SharpVelocityTemplateEngine extends VelocityTemplateEngine {
             }
 
             var path = Paths.get(folder, model.getInfo().getType() + ConstVal.JAVA_SUFFIX);
-            this.outputFile(path.toFile(), context, info);
+            this.outputFile(path.toFile(), context, info, true);
         }
     }
 
 
-    protected void outputAddModel(TableInfo tableInfo, Map<String, Object> objectMap) {
-    }
-
-    protected void outputUpdateModel(TableInfo tableInfo, Map<String, Object> objectMap) {
-    }
-
-    protected void outputRemoveModel(TableInfo tableInfo, Map<String, Object> objectMap) {
-    }
-
-    protected void outputQueryModel(TableInfo tableInfo, Map<String, Object> objectMap) {
-    }
-
-    protected void outputGridModel(TableInfo tableInfo, Map<String, Object> objectMap) {
-    }
-
-    protected void outputInfoModel(TableInfo tableInfo, Map<String, Object> objectMap) {
-    }
+    // protected void outputAddModel(TableInfo tableInfo, Map<String, Object> objectMap) {
+    // }
+    // protected void outputUpdateModel(TableInfo tableInfo, Map<String, Object> objectMap) {
+    // }
+    // protected void outputRemoveModel(TableInfo tableInfo, Map<String, Object> objectMap) {
+    // }
+    // protected void outputQueryModel(TableInfo tableInfo, Map<String, Object> objectMap) {
+    // }
+    // protected void outputGridModel(TableInfo tableInfo, Map<String, Object> objectMap) {
+    // }
+    // protected void outputInfoModel(TableInfo tableInfo, Map<String, Object> objectMap) {
+    // }
 
     // 首个字母小写
     private String getLowercaseFirst(String name) {

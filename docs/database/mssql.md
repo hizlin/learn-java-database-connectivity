@@ -36,7 +36,7 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
-    <version>10.2.0.jre11</version>
+    <version>10.2.0.jre17</version>
 </dependency>
 ```
 > for Java 17: 10.2.0.jre17  

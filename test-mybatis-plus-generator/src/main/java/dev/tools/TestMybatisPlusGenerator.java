@@ -3,7 +3,6 @@ package dev.tools;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.builder.*;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -62,8 +61,9 @@ public class TestMybatisPlusGenerator {
         // 备注: 本示例不建议在实体上开启 Swagger 注解; 因为有专门的 DTO 模型;
 
         // 全局配置; 可选配置: +8
-        return new GlobalConfig.Builder().outputDir(output) // 指定输出目录;
-                .fileOverride() // 开启文件覆盖; default: false (禁止);
+        return new GlobalConfig.Builder()
+                .outputDir(output) // 指定输出目录;
+                // .fileOverride() // 开启文件覆盖; default: false (禁止); v3.5.2 弃用;
                 .disableOpenDir() // 禁止打开生成目录; default: true (打开);
                 .author("CodeGenerator") // 作者;
                 // .enableSwagger() // 开启 Swagger 注解 (用于 Entity 定义); default: false;
@@ -77,7 +77,7 @@ public class TestMybatisPlusGenerator {
         var parent = "dev.example";
         var module = "app";
         var xml = "./test-mybatis-plus-generator" + "/src/main/resources/mapper/" + module;
-        var paths = Collections.singletonMap(OutputFile.mapperXml, xml);
+        var paths = Collections.singletonMap(OutputFile.xml, xml);
 
         // 包名配置; 可选配置: +10
         return new PackageConfig.Builder().parent(parent) // default: com.baomidou
@@ -102,7 +102,7 @@ public class TestMybatisPlusGenerator {
                 .service("/mybatis-templates/service.java") // default: /templates/service.java
                 .serviceImpl("/mybatis-templates/serviceImpl.java") // default: /templates/serviceImpl.java
                 .mapper("/mybatis-templates/mapper.java") // default: /templates/mapper.java
-                .mapperXml("/mybatis-templates/mapper.xml") // default: /templates/mapper.xml
+                .xml("/mybatis-templates/mapper.xml") // default: /templates/mapper.xml
                 .controller("/mybatis-templates/controller.java") // default: /templates/controller.java
                 .build();
     }

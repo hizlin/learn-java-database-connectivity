@@ -46,14 +46,14 @@
 <dependency>
   <groupId>org.apache.shardingsphere</groupId>
   <artifactId>shardingsphere-cluster-mode-repository-zookeeper-curator</artifactId>
-  <version>5.0.0</version>
+  <version>5.1.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.apache.shardingsphere/shardingsphere-cluster-mode-repository-etcd -->
 <dependency>
   <groupId>org.apache.shardingsphere</groupId>
   <artifactId>shardingsphere-cluster-mode-repository-etcd</artifactId>
-  <version>5.0.0</version>
+  <version>5.1.0</version>
 </dependency>
 ```
 
