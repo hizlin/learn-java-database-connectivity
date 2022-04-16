@@ -15,32 +15,40 @@
 | Hibernate ORM | 6.0   | 5.6     | 5.5     | 5.4     | 5.3     |
 |---------------|-------|---------|---------|---------|---------|
 | Java          | 11/17 | 8/11/17 | 8/11/17 | 8/11/17 | 8/11/17 |
-| JPA           | 3.0   | 2.2     | 2.2     | 2.2     | 2.2     |
-| Jakarta JPA   | N/A   | 3.0     | 3.0     | N/A     | M/A     |
+| JPA           | N/A   | 2.2     | 2.2     | 2.2     | 2.2     |
+| Jakarta JPA   | 3.0+  | 3.0     | 3.0     | N/A     | M/A     |
 
 - Source  
   https://github.com/hibernate/hibernate-orm  
-  v5.6.3 2021-12-16
+  v6.0.0 2022-03-31
 
 - Getting Started  
   https://hibernate.org/orm/documentation/getting-started/
 
 - Maven
 ```html
-<!-- for JPA -->
+<!-- v6.x for Jakarta JPA -->
+<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+<dependency>
+  <groupId>org.hibernate.orm</groupId>
+  <artifactId>hibernate-core</artifactId>
+  <version>6.0.0.Final</version>
+</dependency>
+
+<!-- v5.x for JPA -->
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
-    <version>5.6.3.Final</version>
+    <version>5.6.8.Final</version>
 </dependency>
 
-<!-- for Jakarta JPA -->
+<!-- v5.x for Jakarta JPA -->
 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core-jakarta -->
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core-jakarta</artifactId>
-    <version>5.6.3.Final</version>
+    <version>5.6.8.Final</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
 <dependency>
@@ -57,18 +65,18 @@
 - Home  
   https://hibernate.org/reactive/
 
-- Releases
+- Releases  
   https://hibernate.org/reactive/releases/
 
-| Hibernate Reactive | 1.1   |
-|--------------------|-------|
-| Java               | 11/17 |
-| Hibernate ORM      | 5.6   |
-| Vert.x             | 4.2   |
+| Hibernate Reactive | 1.1   | 1.0   |
+|--------------------|-------|-------|
+| Java               | 11/17 | 11/17 |
+| Hibernate ORM      | 5.6   | 5.6   |
+| Vert.x             | 4.2   | 4.1   |
 
 - Source  
   https://github.com/hibernate/hibernate-reactive  
-  v1.1.2 2021-12-16
+  v1.1.4 2022-03-22
 
 - Maven
 ```html
@@ -76,6 +84,6 @@
 <dependency>
     <groupId>org.hibernate.reactive</groupId>
     <artifactId>hibernate-reactive-core</artifactId>
-    <version>1.1.1.Final</version>
+    <version>1.1.4.Final</version>
 </dependency>
 ```

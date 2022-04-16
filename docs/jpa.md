@@ -9,12 +9,20 @@
 
 - Source  
   https://github.com/eclipse-ee4j/jpa-api  
-  v3.0.0 2020-10-27
+  v3.1.0 2022-03-30
 
 #### v3.1
 
 - v3.1 for Jakarta EE 10  
   https://jakarta.ee/specifications/persistence/3.1/
+
+- Docs  
+  https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1.pdf  
+  https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1.html  
+
+- JavaDoc  
+  https://jakarta.ee/specifications/persistence/3.1/apidocs/
+  https://javadoc.io/doc/jakarta.persistence/jakarta.persistence-api/3.1.0/index.html
 
 #### v3.0
 
@@ -45,25 +53,19 @@
 <dependency>
     <groupId>jakarta.persistence</groupId>
     <artifactId>jakarta.persistence-api</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
 <dependency>
-  <groupId>jakarta.persistence</groupId>
-  <artifactId>jakarta.persistence-api</artifactId>
-  <version>2.2.3</version>
+    <groupId>jakarta.persistence</groupId>
+    <artifactId>jakarta.persistence-api</artifactId>
+    <version>2.2.3</version>
 </dependency>
 ```
 > v2.x 版本范围: [2.2.1~2.2.3]  
 > v2.x namespace: javax.persistence.*  
 > v3.x namespace: jakarta.persistence.*; spi: jakarta.persistence.spi.PersistenceProvider
-
-- Implementations
-  - Hibernate
-  - EclipseLink
-  - Apache OpenJPA
-
 
 #### Legacy (javax)
 
@@ -86,6 +88,11 @@
     <version>2.2</version>
 </dependency>
 ```
+
+
+### Implementations
+
+#### Hibernate
 
 #### EclipseLink
 
@@ -127,14 +134,14 @@
   - 并且内嵌 persistence-api 代码 (命名空间: javax.persistence);
   - javax.persistence.spi.PersistenceProvider: org.eclipse.persistence.jpa.PersistenceProvider
 
-#### persistence-api (By Eclipse)
+##### persistence-api (By Eclipse)
 > 等效 javax.persistence:javax.persistence-api;
 
 - JavaDoc  
   https://javadoc.io/doc/org.eclipse.persistence/javax.persistence/2.2.1/index.html  
   https://javadoc.io/doc/org.eclipse.persistence/jakarta.persistence/2.2.3/index.html
 
-- Maven  
+- Maven
 ```html
 <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/jakarta.persistence -->
 <dependency>
@@ -161,7 +168,7 @@
 
 - Source  
   https://github.com/apache/openjpa  
-  v3.2.0: 2021-05-11 (for JPA 2.2)
+  v3.2.2: 2022-03-16
 
 - Maven  
   https://mvnrepository.com/artifact/org.apache.openjpa
@@ -170,6 +177,7 @@
 <dependency>
     <groupId>org.apache.openjpa</groupId>
     <artifactId>openjpa</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.2</version>
 </dependency>
 ```
+> v3.x for JPA 2.2

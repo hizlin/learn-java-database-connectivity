@@ -1,5 +1,5 @@
 
-### Project Structure v5.1.0
+### Project Structure v5.1.1 (Update: 2022-04-16)
 
 #### shardingsphere-agent
 
@@ -27,10 +27,7 @@
 - shardingsphere-db-protocol-postgresql
 - shardingsphere-db-protocol-opengauss
 
-#### shardingsphere-distribution
-
-- shardingsphere-jdbc-distribution
-- shardingsphere-proxy-distribution
+#### shardingsphere-distribution (打包配置)
 
 #### shardingsphere-distsql
 
@@ -47,7 +44,7 @@
     - shardingsphere-db-discovery-distsql-parser
     - shardingsphere-db-discovery-distsql-statement
   - shardingsphere-db-discovery-provider
-    - shardingsphere-db-discovery-mgr
+    - shardingsphere-db-discovery-mysql
     - shardingsphere-db-discovery-opengauss
   - shardingsphere-db-discovery-spring
     - shardingsphere-db-discovery-spring-namespace
@@ -82,7 +79,7 @@
   - shardingsphere-shadow-spring
     - shardingsphere-shadow-spring-namespace
     - shardingsphere-shadow-spring-boot-starter
-- shardingsphere-sharding (分库分表  )
+- shardingsphere-sharding (分库分表)
   - shardingsphere-sharding-api
   - shardingsphere-sharding-core
   - shardingsphere-sharding-distsql
@@ -176,6 +173,7 @@
       - shardingsphere-standalone-mode-repository-api
       - shardingsphere-standalone-mode-repository-provider
         - shardingsphere-standalone-mode-repository-file
+        - shardingsphere-standalone-mode-repository-h2
   - shardingsphere-cluster-mode
     - shardingsphere-cluster-mode-core
     - shardingsphere-cluster-mode-repository
@@ -187,8 +185,8 @@
 #### shardingsphere-proxy
 
 - shardingsphere-proxy-bootstrap
-- shardingsphere-proxy-frontend
 - shardingsphere-proxy-backend
+- shardingsphere-proxy-frontend
   - shardingsphere-proxy-frontend-core
   - shardingsphere-proxy-frontend-spi
   - shardingsphere-proxy-frontend-mysql

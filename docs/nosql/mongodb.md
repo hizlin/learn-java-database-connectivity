@@ -50,20 +50,20 @@ docker pull mongo:5.0-windowsservercore-ltsc2022
 <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>bson</artifactId>
-    <version>4.4.0</version>
+    <version>4.5.1</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
 <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>mongodb-driver-sync</artifactId>
-    <version>4.4.0</version>
+    <version>4.5.1</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-reactivestreams -->
 <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>mongodb-driver-reactivestreams</artifactId>
-    <version>4.4.0</version>
+    <version>4.5.1</version>
 </dependency>
 ```
