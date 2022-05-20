@@ -6,7 +6,7 @@
 
 - Source  
   https://github.com/phpmyadmin/phpmyadmin  
-  v5.1.3 2022-02-11
+  v5.2.0 2022-05-12
 
 #### Docker (By phpmyadmin)
 

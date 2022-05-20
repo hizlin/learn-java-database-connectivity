@@ -1,21 +1,21 @@
 
 ### OpenSearch
-> Derived from Elasticsearch 7.10.2
+> By Amazon; Derived from Elasticsearch 7.10.2;
 
-- Website  
+- Home  
   https://opensearch.org/
   
 - Source: OpenSearch  
   https://github.com/opensearch-project/OpenSearch  
-  v1.2.3 2021-12-19
+  v1.3.2 2022-05-03
 
 
 ### OpenSearch-Dashboards
-> Derived from Kibana 7.10.2
+> By Amazon; Derived from Kibana 7.10.2;
 
 - Source  
   https://github.com/opensearch-project/OpenSearch-Dashboards  
-  v1.2.0 2021-11-24
+  v1.3.2 2022-05-06
 
 
 ### Docker
@@ -27,13 +27,12 @@
   https://hub.docker.com/r/opensearchproject/opensearch
 ```shell
 docker pull opensearchproject/opensearch:latest
-docker pull opensearchproject/opensearch:1.2.3
+docker pull opensearchproject/opensearch:1.3.2
 ```
 
 - OpenSearch Dashboards  
   https://hub.docker.com/r/opensearchproject/opensearch-dashboards
 ```shell
 docker pull opensearchproject/opensearch-dashboards:latest
-docker pull opensearchproject/opensearch-dashboards:1.2.0
+docker pull opensearchproject/opensearch-dashboards:1.3.2
 ```
-

@@ -9,7 +9,7 @@
 
 - Source  
   https://github.com/postgres/pgadmin4  
-  v6.8 2022-04-07
+  v6.9 2022-05-12
 
 ### Docker
 
@@ -24,6 +24,6 @@ docker pull dpage/pgadmin4:latest
 # 6.x 最新版本
 docker pull dpage/pgadmin4:6
 # 固定版本
-docker pull dpage/pgadmin4:6.8
+docker pull dpage/pgadmin4:6.9
 ```
 

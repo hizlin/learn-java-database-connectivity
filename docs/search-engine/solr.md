@@ -5,7 +5,8 @@
   https://solr.apache.org/
 
 - Source  
-  https://github.com/apache/solr
+  https://github.com/apache/solr  
+  v9.0.0 2022-05-11
 
 ### Docker
 
@@ -14,10 +15,10 @@
 
 ```shell
 docker pull solr:latest
-docker pull solr:8.11
+docker pull solr:9
 
 docker pull solr:slim
-docker pull solr:8.11-slim
+docker pull solr:8-slim
 ```
 
 
@@ -27,7 +28,8 @@ docker pull solr:8.11-slim
   https://lucene.apache.org/
 
 - Source  
-  https://github.com/apache/lucene
+  https://github.com/apache/lucene  
+  v9.1.0 2022-03-22
 
 
 ### Legacy

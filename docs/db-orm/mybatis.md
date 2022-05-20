@@ -20,8 +20,7 @@
 
 - Source for Spring Boot  
   https://github.com/mybatis/spring-boot-starter  
-  v2.2.1: 2021-12-30 (for Spring Boot 2.6)  
-  v2.2.0: 2021-05-28 (for Spring Boot 2.5)
+  v2.2.2: 2022-01-30 (for Spring Boot 2.6)  
 
 - Maven
 ```html
@@ -36,7 +35,7 @@
 <dependency>
     <groupId>org.mybatis.spring.boot</groupId>
     <artifactId>mybatis-spring-boot-starter</artifactId>
-    <version>2.2.1</version>
+    <version>2.2.2</version>
 </dependency>
 ```
 
@@ -46,7 +45,7 @@
 
 - Source  
   https://github.com/mybatis/mybatis-dynamic-sql  
-  v1.3.1 2021-12-19
+  v1.4.0 2022-03-04
 
 - Maven
 ```html
@@ -54,7 +53,7 @@
 <dependency>
     <groupId>org.mybatis.dynamic-sql</groupId>
     <artifactId>mybatis-dynamic-sql</artifactId>
-    <version>1.3.1</version>
+    <version>1.4.0</version>
 </dependency>
 ```
 
@@ -65,13 +64,13 @@
 
 - Source  
   https://github.com/mybatis/generator  
-  v1.4.0 2019-11-25
+  v1.4.1 2022-03-09
 
 ```html
 <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
 <dependency>
     <groupId>org.mybatis.generator</groupId>
     <artifactId>mybatis-generator-maven-plugin</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.1</version>
 </dependency>
 ```

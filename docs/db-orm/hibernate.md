@@ -20,7 +20,7 @@
 
 - Source  
   https://github.com/hibernate/hibernate-orm  
-  v6.0.0 2022-03-31
+  v6.0.1 2022-05-07
 
 - Getting Started  
   https://hibernate.org/orm/documentation/getting-started/
@@ -32,7 +32,7 @@
 <dependency>
   <groupId>org.hibernate.orm</groupId>
   <artifactId>hibernate-core</artifactId>
-  <version>6.0.0.Final</version>
+  <version>6.0.1.Final</version>
 </dependency>
 
 <!-- v5.x for JPA -->
@@ -40,7 +40,7 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
-    <version>5.6.8.Final</version>
+    <version>5.6.9.Final</version>
 </dependency>
 
 <!-- v5.x for Jakarta JPA -->
@@ -48,7 +48,7 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core-jakarta</artifactId>
-    <version>5.6.8.Final</version>
+    <version>5.6.9.Final</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
 <dependency>
@@ -76,7 +76,7 @@
 
 - Source  
   https://github.com/hibernate/hibernate-reactive  
-  v1.1.4 2022-03-22
+  v1.1.5 2022-05-16
 
 - Maven
 ```html
@@ -84,6 +84,6 @@
 <dependency>
     <groupId>org.hibernate.reactive</groupId>
     <artifactId>hibernate-reactive-core</artifactId>
-    <version>1.1.4.Final</version>
+    <version>1.1.5.Final</version>
 </dependency>
 ```

@@ -31,7 +31,7 @@
 
 - Source  
   https://github.com/pgjdbc/pgjdbc  
-  v42.3.1 2021-10-30
+  v42.3.5 2022-05-04
 
 - Maven
 ```html
@@ -39,7 +39,7 @@
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.3.1</version>
+    <version>42.3.5</version>
 </dependency>
 ```
 

@@ -39,7 +39,7 @@
 
 - Source  
   https://github.com/baomidou/generator  
-  v3.5.1 2021-10-11
+  v3.5.2 2022-03-01
 
 - Release Notes  
   https://github.com/baomidou/generator/blob/develop/CHANGELOG.md
@@ -50,7 +50,6 @@
 <dependency>
     <groupId>com.baomidou</groupId>
     <artifactId>mybatis-plus-generator</artifactId>
-    <version>3.5.1</version>
+    <version>3.5.2</version>
 </dependency>
 ```
-

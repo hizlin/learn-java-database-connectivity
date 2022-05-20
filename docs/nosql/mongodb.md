@@ -8,7 +8,8 @@
   https://www.mongodb.com/atlas
 
 - Source  
-  https://github.com/mongodb/mongo
+  https://github.com/mongodb/mongo  
+  v5.0.8 2022-04-22
 
 ## Docker
 
@@ -42,7 +43,8 @@ docker pull mongo:5.0-windowsservercore-ltsc2022
   https://mongodb.github.io/mongo-java-driver/
 
 - Source  
-  https://github.com/mongodb/mongo-java-driver
+  https://github.com/mongodb/mongo-java-driver  
+  v4.6.0 2022-04-27
 
 - Maven
 ```html
@@ -50,20 +52,20 @@ docker pull mongo:5.0-windowsservercore-ltsc2022
 <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>bson</artifactId>
-    <version>4.5.1</version>
+    <version>4.6.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
 <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>mongodb-driver-sync</artifactId>
-    <version>4.5.1</version>
+    <version>4.6.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-reactivestreams -->
 <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>mongodb-driver-reactivestreams</artifactId>
-    <version>4.5.1</version>
+    <version>4.6.0</version>
 </dependency>
 ```

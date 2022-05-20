@@ -14,14 +14,14 @@
 <dependency>
     <groupId>org.elasticsearch.client</groupId>
     <artifactId>elasticsearch-rest-client</artifactId>
-    <version>7.16.2</version>
+    <version>8.2.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client -->
 <dependency>
   <groupId>org.elasticsearch.client</groupId>
   <artifactId>elasticsearch-rest-high-level-client</artifactId>
-  <version>7.16.2</version>
+  <version>7.17.3</version>
 </dependency>
 ```
 
@@ -41,7 +41,7 @@
   https://hub.docker.com/u/elastic  
   https://hub.docker.com/r/elastic/elasticsearch  
 ```shell
-docker pull elastic/elasticsearch:7.16.2
+docker pull elastic/elasticsearch:8.2.0
 ```
 
 ### Docker Official Images
@@ -49,7 +49,7 @@ docker pull elastic/elasticsearch:7.16.2
 - Hub  
   https://hub.docker.com/_/elasticsearch
 ```shell
-docker pull elasticsearch:7.16.2
+docker pull elasticsearch:8.2.0
 ```
 
 
@@ -66,13 +66,15 @@ docker pull elasticsearch:7.16.2
 
 - Source  
   https://github.com/spring-projects/spring-data-elasticsearch  
-  v4.3.0 2021-11-12
+  v4.4.0 2022-05-13
+
+- Maven
 ```html
 <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch -->
 <dependency>
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-elasticsearch</artifactId>
-    <version>4.3.0</version>
+    <version>4.4.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch -->
