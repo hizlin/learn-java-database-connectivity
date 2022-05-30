@@ -55,13 +55,6 @@
     <artifactId>jakarta.persistence-api</artifactId>
     <version>3.1.0</version>
 </dependency>
-
-<!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
-<dependency>
-    <groupId>jakarta.persistence</groupId>
-    <artifactId>jakarta.persistence-api</artifactId>
-    <version>2.2.3</version>
-</dependency>
 ```
 > v2.x 版本范围: [2.2.1~2.2.3]  
 > v2.x namespace: javax.persistence.*  
@@ -116,13 +109,6 @@
   <groupId>org.eclipse.persistence</groupId>
   <artifactId>eclipselink</artifactId>
   <version>3.0.2</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
-<dependency>
-  <groupId>org.eclipse.persistence</groupId>
-  <artifactId>eclipselink</artifactId>
-  <version>2.7.10</version>
 </dependency>
 ```
 > 命名空间: org.eclipse.persistence;
